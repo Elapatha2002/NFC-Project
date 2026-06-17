@@ -78,7 +78,7 @@
     const cid = (params.get('cid') || '').trim();
 
     if (!cid) {
-      showError('No company selected', 'Add a company id to the URL, e.g. ?cid=11299');
+      showError('No company selected', 'Please use a link provided by your company to access this page.');
       return;
     }
 
