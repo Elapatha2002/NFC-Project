@@ -2,6 +2,7 @@
  * To support a new platform, just add an entry here — both pages pick it up. */
 window.PLATFORMS = [
   { key: 'phone',     label: 'Call',      icon: 'fa-solid fa-phone',         color: '#16a34a', type: 'phone',    placeholder: '+94 11 234 5678' },
+  { key: 'phone2',    label: 'Call (2nd)', icon: 'fa-solid fa-phone',        color: '#16a34a', type: 'phone',    placeholder: '+94 11 234 5679 (second number)' },
   { key: 'whatsapp',  label: 'WhatsApp',  icon: 'fa-brands fa-whatsapp',     color: '#25D366', type: 'whatsapp', placeholder: '94771234567 (digits, country code, no +)' },
   { key: 'email',     label: 'Email',     icon: 'fa-solid fa-envelope',      color: '#ea4335', type: 'email',    placeholder: 'info@company.com' },
   { key: 'website',   label: 'Website',   icon: 'fa-solid fa-globe',         color: '#2563eb', type: 'url',      placeholder: 'https://company.com' },
