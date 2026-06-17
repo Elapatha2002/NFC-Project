@@ -11,7 +11,7 @@ async function handler(req, res) {
 
   const cid = (req.query.cid || '').toString().trim();
   if (!cid) {
-    res.status(400).json({ error: 'Missing company id. Use ?cid=YOUR_COMPANY_ID' });
+    res.status(400).json({ error: 'Missing company id.' });
     return;
   }
 

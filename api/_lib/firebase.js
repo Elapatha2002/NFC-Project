@@ -5,8 +5,15 @@ const { getApps, initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
 function getPrivateKey() {
-  const key = process.env.FIREBASE_PRIVATE_KEY || '';
-  // In dashboards/.env the newlines are usually escaped as the two characters "\n".
+  let key = process.env.FIREBASE_PRIVATE_KEY || '';
+  // If the value was pasted into a dashboard wrapped in quotes, strip them —
+  // unlike .env files, dashboards keep quotes as literal characters.
+  if (key.length > 1 &&
+      ((key.startsWith('"') && key.endsWith('"')) ||
+       (key.startsWith("'") && key.endsWith("'")))) {
+    key = key.slice(1, -1);
+  }
+  // Convert the escaped two-character "\n" sequences into real newlines.
   return key.replace(/\\n/g, '\n');
 }
 
