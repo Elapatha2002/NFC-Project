@@ -18,9 +18,11 @@ function getPrivateKey() {
 }
 
 if (!getApps().length) {
-  const projectId = process.env.FIREBASE_PROJECT_ID;
-  const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
-  const privateKey = getPrivateKey();
+  // .trim() guards against stray whitespace/tabs/newlines pasted into a dashboard,
+  // which gRPC otherwise rejects as "illegal characters" in the request metadata.
+  const projectId = (process.env.FIREBASE_PROJECT_ID || '').trim();
+  const clientEmail = (process.env.FIREBASE_CLIENT_EMAIL || '').trim();
+  const privateKey = getPrivateKey().trim();
 
   if (!projectId || !clientEmail || !privateKey) {
     throw new Error(
