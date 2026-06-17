@@ -1,0 +1,20 @@
+{
+  "name": "company-links-hub",
+  "version": "1.0.0",
+  "description": "A customizable link hub page per company (read company by ?cid=) with an admin panel, backed by Firebase Firestore and deployed on Vercel.",
+  "private": true,
+  "scripts": {
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "firebase-admin": "^14.0.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

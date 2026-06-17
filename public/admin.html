@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · Company Links Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="admin-wrap">
+    <div class="container">
+
+      <!-- ============ LOGIN VIEW ============ -->
+      <section id="login-view">
+        <h1 class="admin-title">Admin Login<span class="badge">Company Links Hub</span></h1>
+        <div class="panel" style="max-width:420px;margin:0 auto;">
+          <div id="login-msg" class="msg error"></div>
+          <form id="login-form">
+            <div class="field">
+              <label for="username">Username</label>
+              <input id="username" type="text" autocomplete="username" required />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button class="btn btn-block" type="submit" id="login-btn">
+              <i class="fa-solid fa-right-to-bracket"></i> Log in
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ============ DASHBOARD VIEW ============ -->
+      <section id="dash-view" class="hidden">
+        <div class="topbar">
+          <h1 class="admin-title" style="margin:0;">Manage Companies</h1>
+          <div>
+            <span class="who" id="who"></span>
+            <button class="btn btn-ghost" id="logout-btn" style="margin-left:10px;">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+          </div>
+        </div>
+
+        <div id="global-msg" class="msg"></div>
+
+        <!-- Selector / create -->
+        <div class="panel">
+          <div class="toolbar">
+            <div class="grow">
+              <label for="company-select">Select a company</label>
+              <select id="company-select">
+                <option value="">— Choose a company —</option>
+              </select>
+            </div>
+            <button class="btn btn-ghost" id="new-btn"><i class="fa-solid fa-plus"></i> New company</button>
+          </div>
+        </div>
+
+        <!-- Editor -->
+        <div class="panel hidden" id="editor">
+          <div class="field">
+            <label for="cid">Company ID <span style="color:#dc2626">*</span></label>
+            <input id="cid" type="text" placeholder="e.g. 11299" />
+            <div class="hint">This is the value used in the public URL: <code>?cid=&lt;ID&gt;</code>. Cannot be changed after creation (create a new one instead).</div>
+          </div>
+
+          <div class="field">
+            <label for="name">Company Name <span style="color:#dc2626">*</span></label>
+            <input id="name" type="text" placeholder="e.g. ABC Company" />
+          </div>
+
+          <div class="field">
+            <label for="logo">Logo</label>
+            <input id="logo" type="text" placeholder="logo file name (e.g. abc-logo.png) or full image URL" />
+            <div class="hint">Either a full image URL, or a file name placed in <code>/public/logos/</code>.</div>
+          </div>
+
+          <div class="section-title">Links &amp; Contacts</div>
+          <div id="links-editor"></div>
+
+          <div class="actions">
+            <button class="btn" id="save-btn"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+            <a class="btn btn-ghost" id="preview-btn" target="_blank"><i class="fa-solid fa-eye"></i> Preview page</a>
+            <button class="btn btn-danger" id="delete-btn"><i class="fa-solid fa-trash"></i> Delete</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="/js/platforms.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

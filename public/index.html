@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Links</title>
+  <meta name="description" content="All official links in one place." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- Loading state -->
+    <div id="loading" class="state">
+      <div class="spinner"></div>
+      <p>Loading…</p>
+    </div>
+
+    <!-- Error / empty state -->
+    <div id="error" class="state hidden">
+      <h2 id="error-title">Something went wrong</h2>
+      <p id="error-text"></p>
+    </div>
+
+    <!-- Company card -->
+    <div id="card" class="card hidden">
+      <div class="card-header">
+        <div id="logo-holder"></div>
+        <h1 class="company-name" id="company-name"></h1>
+        <p class="tagline">Tap a button below to connect with us</p>
+      </div>
+      <div class="links" id="links"></div>
+      <div class="footer">Powered by Company Links Hub</div>
+    </div>
+  </main>
+
+  <script src="/js/platforms.js"></script>
+  <script src="/js/company.js"></script>
+</body>
+</html>
